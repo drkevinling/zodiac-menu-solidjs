@@ -1,0 +1,221 @@
+{
+  "categories": [
+    {
+      "id": "coffee",
+      "name": "Coffee Menu",
+      "description": "Our coffee selection",
+      "order": 1
+    }
+  ],
+  "items": [
+    {
+      "id": "address",
+      "name": "Address Coffee",
+      "description": "Our signature Address coffee - premium blend",
+      "price": 4.50,
+      "category": "coffee",
+      "image": "/images/Address.webp",
+      "alt": "Address coffee in a cup",
+      "available": true,
+      "order": 1
+    },
+    {
+      "id": "coffee-1",
+      "name": "Coffee 1",
+      "description": "Delicious coffee selection",
+      "price": 3.50,
+      "category": "coffee",
+      "image": "/images/1.webp",
+      "alt": "Coffee item 1",
+      "available": true,
+      "order": 2
+    },
+    {
+      "id": "coffee-2",
+      "name": "Coffee 2",
+      "description": "Rich and flavorful coffee",
+      "price": 3.75,
+      "category": "coffee",
+      "image": "/images/2.webp",
+      "alt": "Coffee item 2",
+      "available": true,
+      "order": 3
+    },
+    {
+      "id": "coffee-3",
+      "name": "Coffee 3",
+      "description": "Smooth coffee experience",
+      "price": 4.00,
+      "category": "coffee",
+      "image": "/images/3.webp",
+      "alt": "Coffee item 3",
+      "available": true,
+      "order": 4
+    },
+    {
+      "id": "coffee-4",
+      "name": "Coffee 4",
+      "description": "Premium coffee blend",
+      "price": 4.25,
+      "category": "coffee",
+      "image": "/images/4.webp",
+      "alt": "Coffee item 4",
+      "available": true,
+      "order": 5
+    },
+    {
+      "id": "coffee-5",
+      "name": "Coffee 5",
+      "description": "Traditional coffee taste",
+      "price": 3.50,
+      "category": "coffee",
+      "image": "/images/5.webp",
+      "alt": "Coffee item 5",
+      "available": true,
+      "order": 6
+    },
+    {
+      "id": "coffee-6",
+      "name": "Coffee 6",
+      "description": "Bold coffee flavor",
+      "price": 3.75,
+      "category": "coffee",
+      "image": "/images/6.webp",
+      "alt": "Coffee item 6",
+      "available": true,
+      "order": 7
+    },
+    {
+      "id": "coffee-7",
+      "name": "Coffee 7",
+      "description": "Smooth and aromatic",
+      "price": 4.00,
+      "category": "coffee",
+      "image": "/images/7.webp",
+      "alt": "Coffee item 7",
+      "available": true,
+      "order": 8
+    },
+    {
+      "id": "coffee-8",
+      "name": "Coffee 8",
+      "description": "Premium selection",
+      "price": 4.50,
+      "category": "coffee",
+      "image": "/images/8.webp",
+      "alt": "Coffee item 8",
+      "available": true,
+      "order": 9
+    },
+    {
+      "id": "coffee-9",
+      "name": "Coffee 9",
+      "description": "Rich coffee taste",
+      "price": 3.50,
+      "category": "coffee",
+      "image": "/images/9.webp",
+      "alt": "Coffee item 9",
+      "available": true,
+      "order": 10
+    },
+    {
+      "id": "coffee-10",
+      "name": "Coffee 10",
+      "description": "Aromatic and flavorful",
+      "price": 3.75,
+      "category": "coffee",
+      "image": "/images/10.webp",
+      "alt": "Coffee item 10",
+      "available": true,
+      "order": 11
+    },
+    {
+      "id": "coffee-11",
+      "name": "Coffee 11",
+      "description": "Bold coffee experience",
+      "price": 4.00,
+      "category": "coffee",
+      "image": "/images/11.webp",
+      "alt": "Coffee item 11",
+      "available": true,
+      "order": 12
+    },
+    {
+      "id": "coffee-12",
+      "name": "Coffee 12",
+      "description": "Smooth and rich",
+      "price": 4.25,
+      "category": "coffee",
+      "image": "/images/12.webp",
+      "alt": "Coffee item 12",
+      "available": true,
+      "order": 13
+    },
+    {
+      "id": "coffee-13",
+      "name": "Coffee 13",
+      "description": "Premium coffee blend",
+      "price": 4.50,
+      "category": "coffee",
+      "image": "/images/13.webp",
+      "alt": "Coffee item 13",
+      "available": true,
+      "order": 14
+    },
+    {
+      "id": "coffee-14",
+      "name": "Coffee 14",
+      "description": "Traditional taste",
+      "price": 3.50,
+      "category": "coffee",
+      "image": "/images/14.webp",
+      "alt": "Coffee item 14",
+      "available": true,
+      "order": 15
+    },
+    {
+      "id": "coffee-15",
+      "name": "Coffee 15",
+      "description": "Rich and aromatic",
+      "price": 3.75,
+      "category": "coffee",
+      "image": "/images/15.webp",
+      "alt": "Coffee item 15",
+      "available": true,
+      "order": 16
+    },
+    {
+      "id": "coffee-16",
+      "name": "Coffee 16",
+      "description": "Smooth coffee flavor",
+      "price": 4.00,
+      "category": "coffee",
+      "image": "/images/16.webp",
+      "alt": "Coffee item 16",
+      "available": true,
+      "order": 17
+    },
+    {
+      "id": "coffee-17",
+      "name": "Coffee 17",
+      "description": "Bold and rich",
+      "price": 4.50,
+      "category": "coffee",
+      "image": "/images/17.webp",
+      "alt": "Coffee item 17",
+      "available": true,
+      "order": 18
+    },
+    {
+      "id": "coffee-18",
+      "name": "Coffee 18",
+      "description": "Premium selection",
+      "price": 4.75,
+      "category": "coffee",
+      "image": "/images/18.webp",
+      "alt": "Coffee item 18",
+      "available": true,
+      "order": 19
+    }
+  ]
+}

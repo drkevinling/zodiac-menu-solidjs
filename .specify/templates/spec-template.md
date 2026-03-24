@@ -85,7 +85,7 @@
 ### Functional Requirements
 
 - **FR-001**: System MUST [specific capability, e.g., "allow users to create accounts"]
-- **FR-002**: System MUST [specific capability, e.g., "validate email addresses"]  
+- **FR-002**: System MUST [specific capability, e.g., "validate email addresses"]
 - **FR-003**: Users MUST be able to [key interaction, e.g., "reset their password"]
 - **FR-004**: System MUST [data requirement, e.g., "persist user preferences"]
 - **FR-005**: System MUST [behavior, e.g., "log all security events"]
@@ -94,6 +94,27 @@
 
 - **FR-006**: System MUST authenticate users via [NEEDS CLARIFICATION: auth method not specified - email/password, SSO, OAuth?]
 - **FR-007**: System MUST retain user data for [NEEDS CLARIFICATION: retention period not specified]
+
+### Non-Functional Requirements *(per Constitution)*
+
+#### Performance Requirements
+- **NFR-P001**: Page loads MUST complete within 3 seconds on 3G connections
+- **NFR-P002**: API responses MUST return within 500ms for 95th percentile under expected load
+- **NFR-P003**: Bundle sizes MUST be optimized with code splitting and lazy loading
+- **NFR-P004**: Database queries MUST be optimized with proper indexing
+
+#### User Experience Requirements
+- **NFR-UX001**: Interface MUST meet WCAG 2.1 AA accessibility standards
+- **NFR-UX002**: Responsive design MUST be mobile-first with breakpoints defined
+- **NFR-UX003**: Error messages MUST be clear, actionable, and user-friendly
+- **NFR-UX004**: Loading states MUST be present for all async operations
+- **NFR-UX005**: Navigation patterns MUST be consistent across all pages
+
+#### Testing Requirements
+- **NFR-T001**: All business logic MUST have corresponding unit tests (min 80% coverage)
+- **NFR-T002**: Integration tests MUST exist for all API endpoints and critical user flows
+- **NFR-T003**: Tests MUST be automated and run in CI/CD pipeline
+- **NFR-T004**: Tests MUST cover edge cases and error scenarios
 
 ### Key Entities *(include if feature involves data)*
 

@@ -1,0 +1,34 @@
+{
+  "name": "coffee-menu-website",
+  "version": "0.1.0",
+  "description": "A mobile-first, responsive coffee menu website built with SolidJS",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc && vite build",
+    "preview": "vite preview",
+    "test": "vitest",
+    "test:watch": "vitest --watch",
+    "test:coverage": "vitest --coverage",
+    "lint": "eslint . --ext .ts,.tsx",
+    "lint:fix": "eslint . --ext .ts,.tsx --fix"
+  },
+  "dependencies": {
+    "solid-js": "^1.8.0",
+    "@solidjs/router": "^0.10.0"
+  },
+  "devDependencies": {
+    "vite": "^5.0.0",
+    "vite-plugin-solid": "^2.8.0",
+    "typescript": "^5.3.0",
+    "vitest": "^1.0.0",
+    "@solidjs/testing-library": "^0.8.0",
+    "eslint": "^8.55.0",
+    "eslint-plugin-solid": "^0.13.0",
+    "@typescript-eslint/eslint-plugin": "^6.15.0",
+    "@typescript-eslint/parser": "^6.15.0",
+    "tailwindcss": "^3.4.0",
+    "autoprefixer": "^10.4.16",
+    "postcss": "^8.4.32"
+  }
+}

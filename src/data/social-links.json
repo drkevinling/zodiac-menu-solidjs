@@ -1,0 +1,25 @@
+{
+  "socialLinks": [
+    {
+      "id": "facebook",
+      "name": "Facebook",
+      "url": "https://www.facebook.com/zodiaccoffeelounge",
+      "appUrl": "fb://profile/61564319966383",
+      "icon": "facebook"
+    },
+    {
+      "id": "tiktok",
+      "name": "TikTok",
+      "url": "https://www.tiktok.com/@zodiac.coffee.lounge",
+      "appUrl" :"snssdk1233://user/@zodiac.coffee.lounge",
+      "icon": "tiktok"
+    },
+    {
+      "id": "instagram",
+      "name": "Instagram",
+      "url": "https://www.instagram.com/zodiaccoffeelounge",
+      "appUrl": "instagram://user?username=zodiaccoffeelounge",
+      "icon": "instagram"
+    }
+  ]
+}

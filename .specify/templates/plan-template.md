@@ -31,7 +31,10 @@
 
 *GATE: Must pass before Phase 0 research. Re-check after Phase 1 design.*
 
-[Gates determined based on constitution file]
+- [ ] **Code Quality**: Design must be testable, maintainable, and follow best practices for chosen technology stack
+- [ ] **Testing Standards**: Approach must support unit tests (min 80% coverage) and integration tests for critical paths
+- [ ] **UX Consistency**: Must follow established design system patterns and meet WCAG 2.1 AA accessibility standards
+- [ ] **Performance Requirements**: Must meet performance budgets: page loads <3s (3G), API responses <500ms p95, optimized bundle sizes
 
 ## Project Structure
 
