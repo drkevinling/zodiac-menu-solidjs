@@ -7,6 +7,9 @@ const config: Config = {
   ],
   theme: {
     extend: {
+      fontFamily: {
+        display: ['"Fraunces"', 'ui-serif', 'Georgia', 'serif'],
+      },
       colors: {
         primary: {
           50: '#e6f2ff',

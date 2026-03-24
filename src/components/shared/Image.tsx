@@ -13,10 +13,7 @@ const Image: Component<ImageProps> = (props) => {
 
   const handleError = () => {
     setError(true);
-    console.warn(`Failed to load image: ${props.src}`);
   };
-
-  console.log('Rendering image:', props.src);
 
   return (
     <div class={`relative w-full bg-gray-100 min-h-[200px] overflow-hidden ${props.class || ''}`}>
