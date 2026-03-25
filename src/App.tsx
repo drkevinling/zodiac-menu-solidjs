@@ -58,7 +58,7 @@ const App: Component = () => {
           <Motion.div
             initial={{ opacity: 0, scale: 0.95, y: 20 }}
             animate={{ opacity: 1, scale: 1, y: [0, -10, 0] }}
-            transition={{ 
+            transition={{
               opacity: { duration: 1 },
               scale: { duration: 1 },
               y: { duration: 4, repeat: Infinity, easing: "ease-in-out" }
@@ -78,8 +78,8 @@ const App: Component = () => {
                 <Motion.span
                   initial={{ opacity: 0, y: 10 }}
                   animate={{ opacity: 1, y: 0 }}
-                  transition={{ 
-                    delay: 0.8 + i() * 0.15, 
+                  transition={{
+                    delay: 0.8 + i() * 0.15,
                     duration: 0.6,
                     easing: "ease-out"
                   }}
@@ -97,8 +97,8 @@ const App: Component = () => {
                 <Motion.a
                   initial={{ opacity: 0 }}
                   animate={{ opacity: 1 }}
-                  transition={{ 
-                    duration: 1.2, 
+                  transition={{
+                    duration: 1.2,
                     delay: 1.2 + i() * 0.15,
                     easing: "ease-in-out"
                   }}
@@ -118,9 +118,9 @@ const App: Component = () => {
         </div>
       </header>
 
-      <main class="py-4 px-4 w-full max-w-7xl mx-auto bg-gray-50">
+      <main class="py-4 px-4 w-full max-w-7xl mx-auto bg-gradient-to-b from-gray-100 to-white shadow-2xl rounded-t-2xl -mt-12 relative z-20">
         <section aria-label="Coffee menu" class="w-full">
-          <div class="flex flex-col gap-4 mt-2 w-full max-w-md mx-auto">
+          <div class="flex flex-col gap-4 w-full max-w-md mx-auto">
             <For each={menu.items}>
               {(item) => (
                 <CoffeeItem item={item} />
