@@ -3,6 +3,7 @@
 A mobile-first, responsive coffee menu website built with SolidJS.
 
 See [DOCS.md](./DOCS.md) for maintenance and operations guide.
+For the Vanta first-load background sizing issue and fix technique, see the "Troubleshooting: Vanta Clouds only behind logo on first load" section in `DOCS.md`.
 
 ## Build Size
 - **HTML**: 0.56 kB

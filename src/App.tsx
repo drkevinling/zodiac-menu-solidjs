@@ -52,8 +52,8 @@ const App: Component = () => {
 
   return (
     <div class="min-h-screen">
-      <header class="isolate relative pt-8 pb-4 overflow-hidden border-b border-amber-900/10 mb-8">
-        <VantaClouds />
+      <header id="hero-header" class="isolate relative pt-8 pb-4 overflow-hidden border-b border-amber-900/10 mb-8">
+        <VantaClouds targetId="hero-header" />
         <div class="relative z-10 w-full max-w-7xl mx-auto px-4">
           <Motion.div
             initial={{ opacity: 0, scale: 0.95, y: 20 }}

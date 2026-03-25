@@ -2,14 +2,39 @@ import { onMount, onCleanup, Component } from 'solid-js';
 import * as THREE from 'three';
 import CLOUDS from 'vanta/dist/vanta.clouds.min';
 
-const VantaClouds: Component = () => {
-  let vantaRef: HTMLDivElement | undefined;
-  let vantaEffect: any;
+interface VantaCloudsProps {
+  targetId: string;
+}
+
+const VantaClouds: Component<VantaCloudsProps> = (props) => {
+  type VantaEffect = {
+    resize?: () => void;
+    destroy: () => void;
+  };
+  let vantaEffect: VantaEffect | undefined;
+  let resizeObserver: ResizeObserver | undefined;
+  let rafId: number | undefined;
+  let settleTimers: number[] = [];
+
+  const safeResize = () => {
+    if (!vantaEffect?.resize) return;
+    if (rafId) cancelAnimationFrame(rafId);
+    rafId = requestAnimationFrame(() => {
+      try {
+        vantaEffect?.resize?.();
+      } catch {
+        // If effect is being destroyed, ignore.
+      }
+    });
+  };
 
   onMount(() => {
-    if (!vantaEffect && vantaRef) {
+    const target = document.getElementById(props.targetId);
+    if (!target) return;
+
+    if (!vantaEffect) {
       vantaEffect = CLOUDS({
-        el: vantaRef,
+        el: target,
         THREE: THREE,
         mouseControls: true,
         touchControls: true,
@@ -24,21 +49,39 @@ const VantaClouds: Component = () => {
         sunlightColor: 0xff9933
       });
     }
+
+    // Observe the actual Vanta host element for reliable dimensions.
+    resizeObserver = new ResizeObserver(() => {
+      // Debounce via rAF to avoid calling resize too frequently.
+      safeResize();
+    });
+    resizeObserver.observe(target);
+
+    // Handle late layout shifts (logo image decode, font swap, incognito cold-cache).
+    safeResize();
+    settleTimers = [0, 120, 300, 700, 1400, 2200].map((delay) => (
+      window.setTimeout(safeResize, delay)
+    ));
+
+    window.addEventListener('load', safeResize);
+    window.addEventListener('resize', safeResize);
+    window.addEventListener('orientationchange', safeResize);
   });
 
   onCleanup(() => {
+    if (resizeObserver) resizeObserver.disconnect();
+    if (rafId) cancelAnimationFrame(rafId);
+    settleTimers.forEach((id) => window.clearTimeout(id));
+    settleTimers = [];
+    window.removeEventListener('load', safeResize);
+    window.removeEventListener('resize', safeResize);
+    window.removeEventListener('orientationchange', safeResize);
     if (vantaEffect) {
       vantaEffect.destroy();
     }
   });
 
-  return (
-    <div
-      ref={vantaRef}
-      class="absolute inset-0 -z-10 w-full h-full"
-      style={{ "pointer-events": "none" }}
-    />
-  );
+  return null;
 };
 
 export default VantaClouds;
