@@ -9,8 +9,10 @@ interface VantaCloudsProps {
 const VantaClouds: Component<VantaCloudsProps> = (props) => {
   type VantaEffect = {
     resize?: () => void;
+    setOptions?: (options: Record<string, unknown>) => void;
     destroy: () => void;
   };
+  const INITIAL_SPEED = 1.35;
   let vantaEffect: VantaEffect | undefined;
   let resizeObserver: ResizeObserver | undefined;
   let rafId: number | undefined;
@@ -39,6 +41,7 @@ const VantaClouds: Component<VantaCloudsProps> = (props) => {
         mouseControls: true,
         touchControls: true,
         gyroControls: false,
+        speed: INITIAL_SPEED,
         minHeight: 200.0,
         minWidth: 200.0,
         skyColor: 0xe2e2e3,
@@ -57,9 +60,9 @@ const VantaClouds: Component<VantaCloudsProps> = (props) => {
     });
     resizeObserver.observe(target);
 
-    // Handle late layout shifts (logo image decode, font swap, incognito cold-cache).
+    // Handle early layout shifts (logo image decode, font swap, incognito cold-cache).
     safeResize();
-    settleTimers = [0, 120, 300, 700, 1400, 2200].map((delay) => (
+    settleTimers = [0, 120, 300, 700, 1200].map((delay) => (
       window.setTimeout(safeResize, delay)
     ));
 
