@@ -2,6 +2,8 @@
 
 A mobile-first, responsive coffee menu website built with SolidJS.
 
+See [DOCS.md](./DOCS.md) for maintenance and operations guide.
+
 ## Build Size
 - **HTML**: 0.56 kB
 - **CSS**: 13.13 kB

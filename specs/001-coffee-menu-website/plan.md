@@ -11,6 +11,10 @@ Create a mobile-first, responsive static website using SolidJS to display a coff
 
 **Language/Version**: TypeScript 5.x with SolidJS 1.x
 **Primary Dependencies**: SolidJS framework, Solid Router (for navigation), TypeScript for type safety
+**UI UX Design Guidelines**:
+- **Animation**: Motion (motion.dev) or Motion One for low‑level CSS/Web Animations.
+- **Components**: Tailwind + Headless UI / Preline / FloatUI.
+- **FX**: Vanta.js for quick backgrounds, COBE for globe scenes.
 **Storage**: JSON file for menu data (static content), no database required
 **Testing**: Vitest (SolidJS-compatible testing framework) + Testing Library for SolidJS
 **Target Platform**: Modern web browsers (Chrome, Firefox, Safari, Edge) with mobile-first optimization

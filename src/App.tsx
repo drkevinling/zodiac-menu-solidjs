@@ -1,8 +1,10 @@
 import { Component, For } from 'solid-js';
+import { Motion } from 'solid-motionone';
 import menuJson from './data/menu.json';
 import socialLinksJson from './data/social-links.json';
 import { Menu } from './types/menu';
 import CoffeeItem from './components/CoffeeItem/CoffeeItem';
+import VantaClouds from './components/VantaClouds';
 
 const App: Component = () => {
   const menu = menuJson as Menu;
@@ -38,55 +40,95 @@ const App: Component = () => {
   const getColorClasses = (iconType: string) => {
     switch (iconType) {
       case 'facebook':
-        return 'bg-gradient-to-br from-blue-500 to-blue-700 border-blue-400 hover:from-blue-600 hover:to-blue-800 hover:scale-110 hover:-translate-y-1 shadow-blue-500/50 hover:shadow-blue-600/80';
+        return 'bg-gradient-to-br from-blue-500 to-blue-700 border-blue-400 hover:from-blue-600 hover:to-blue-800 shadow-blue-500/50 hover:shadow-blue-600/80';
       case 'tiktok':
-        return 'bg-gradient-to-br from-gray-700 to-black border-gray-500 hover:from-gray-800 hover:to-black hover:scale-110 hover:-translate-y-1 shadow-gray-500/50 hover:shadow-gray-600/80';
+        return 'bg-gradient-to-br from-gray-700 to-black border-gray-500 hover:from-gray-800 hover:to-black shadow-gray-500/50 hover:shadow-gray-600/80';
       case 'instagram':
-        return 'bg-gradient-to-br from-yellow-400 via-pink-500 to-purple-600 border-pink-400 hover:from-yellow-500 hover:via-pink-600 hover:to-purple-700 hover:scale-110 hover:-translate-y-1 shadow-pink-500/50 hover:shadow-pink-600/80';
+        return 'bg-gradient-to-br from-yellow-400 via-pink-500 to-purple-600 border-pink-400 hover:from-yellow-500 hover:via-pink-600 hover:to-purple-700 shadow-pink-500/50 hover:shadow-pink-600/80';
       default:
-        return 'bg-gradient-to-br from-gray-500 to-gray-700 border-gray-400 hover:from-gray-600 hover:to-gray-800 hover:scale-110 hover:-translate-y-1';
+        return 'bg-gradient-to-br from-gray-500 to-gray-700 border-gray-400 hover:from-gray-600 hover:to-gray-800';
     }
   };
 
   return (
-    <div class="min-h-screen bg-gray-50 py-8 px-4">
-      <section aria-label="Coffee menu" class="w-full max-w-7xl mx-auto">
-        <div class="w-full max-w-md mx-auto mb-8 rounded-xl border-2 shadow-xl overflow-hidden">
-          <img
-            src="/images/Logo.webp"
-            alt="Logo"
-            class="w-full h-auto"
-          />
-        </div>
-        <p class="font-['Segoe_UI_Emoji'] text-xl font-light tracking-wide text-center text-amber-950 mb-8 [text-shadow:0_1px_0_rgb(255_255_255_/_0.6)] [background-clip:unset] [-webkit-background-clip:unset]">
-          Welcome To Zodiac Coffee Lounge
-        </p>
-        <div class="flex justify-center gap-4 mb-8">
-          <For each={socialLinks}>
-            {(link) => (
-              <a
-                href={link.url}
-                target="_blank"
-                rel="noopener noreferrer"
-                class={`w-12 h-12 flex items-center justify-center backdrop-blur-md text-white rounded-full transition-all duration-300 border-2 relative group ${getColorClasses(link.icon)}`}
-                aria-label={link.name}
-              >
-                <span class="absolute inset-0 rounded-full border-2 border-white/20 group-hover:border-white/40 transition-all" />
-                <span class="absolute inset-0 rounded-full bg-gradient-to-br from-white/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
-                {getIcon(link.icon)}
-              </a>
-            )}
-          </For>
-        </div>
+    <div class="min-h-screen">
+      <header class="isolate relative pt-8 pb-4 overflow-hidden border-b border-amber-900/10 mb-8">
+        <VantaClouds />
+        <div class="relative z-10 w-full max-w-7xl mx-auto px-4">
+          <Motion.div
+            initial={{ opacity: 0, scale: 0.95, y: 20 }}
+            animate={{ opacity: 1, scale: 1, y: [0, -10, 0] }}
+            transition={{ 
+              opacity: { duration: 1 },
+              scale: { duration: 1 },
+              y: { duration: 4, repeat: Infinity, easing: "ease-in-out" }
+            }}
+            class="w-full max-w-md mx-auto mb-8 rounded-xl border-2 shadow-xl overflow-hidden bg-white/10 backdrop-blur-sm"
+          >
+            <img
+              src="/images/Logo.webp"
+              alt="Logo"
+              class="w-full h-auto"
+            />
+          </Motion.div>
 
-        <div class="flex flex-col gap-4 mt-2 w-full max-w-md mx-auto">
-          <For each={menu.items}>
-            {(item) => (
-              <CoffeeItem item={item} />
-            )}
-          </For>
+          <div class="mb-8 text-center">
+            <For each={"Welcome To Zodiac Coffee Lounge".split(" ")}>
+              {(word, i) => (
+                <Motion.span
+                  initial={{ opacity: 0, y: 10 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ 
+                    delay: 0.8 + i() * 0.15, 
+                    duration: 0.6,
+                    easing: "ease-out"
+                  }}
+                  class="inline-block font-['Segoe_UI_Emoji'] text-2xl font-bold tracking-tight text-amber-950 mx-1"
+                >
+                  {word}
+                </Motion.span>
+              )}
+            </For>
+          </div>
+
+          <div class="flex justify-center gap-4 mb-4 w-[176px] mx-auto">
+            <For each={socialLinks}>
+              {(link, i) => (
+                <Motion.a
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  transition={{ 
+                    duration: 1.2, 
+                    delay: 1.2 + i() * 0.15,
+                    easing: "ease-in-out"
+                  }}
+                  href={link.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class={`w-12 h-12 flex items-center justify-center backdrop-blur-md text-white rounded-full border-2 relative group ${getColorClasses(link.icon)}`}
+                  aria-label={link.name}
+                >
+                  <span class="absolute inset-0 rounded-full border-2 border-white/20 group-hover:border-white/40 transition-all" />
+                  <span class="absolute inset-0 rounded-full bg-gradient-to-br from-white/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
+                  {getIcon(link.icon)}
+                </Motion.a>
+              )}
+            </For>
+          </div>
         </div>
-      </section>
+      </header>
+
+      <main class="py-4 px-4 w-full max-w-7xl mx-auto bg-gray-50">
+        <section aria-label="Coffee menu" class="w-full">
+          <div class="flex flex-col gap-4 mt-2 w-full max-w-md mx-auto">
+            <For each={menu.items}>
+              {(item) => (
+                <CoffeeItem item={item} />
+              )}
+            </For>
+          </div>
+        </section>
+      </main>
     </div>
   );
 };
