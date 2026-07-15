@@ -83,7 +83,7 @@ const App: Component = () => {
                     duration: 0.6,
                     easing: "ease-out"
                   }}
-                  class="inline-block font-['Segoe_UI_Emoji'] text-2xl font-bold tracking-tight text-amber-950 mx-1"
+                  class="inline-block font-['Segoe_UI_Emoji'] text-2xl font-bold tracking-tight text-white mx-1"
                 >
                   {word}
                 </Motion.span>

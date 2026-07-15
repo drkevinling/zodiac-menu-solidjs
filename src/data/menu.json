@@ -216,6 +216,28 @@
       "alt": "Coffee item 18",
       "available": true,
       "order": 19
+    },
+    {
+      "id": "coffee-19",
+      "name": "Coffee 19",
+      "description": "Rich and balanced",
+      "price": 3.50,
+      "category": "coffee",
+      "image": "/images/19.webp",
+      "alt": "Coffee item 19",
+      "available": true,
+      "order": 20
+    },
+    {
+      "id": "coffee-20",
+      "name": "Coffee 20",
+      "description": "Smooth and aromatic",
+      "price": 3.75,
+      "category": "coffee",
+      "image": "/images/20.webp",
+      "alt": "Coffee item 20",
+      "available": true,
+      "order": 21
     }
   ]
 }
