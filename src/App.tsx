@@ -5,6 +5,7 @@ import socialLinksJson from './data/social-links.json';
 import { Menu } from './types/menu';
 import CoffeeItem from './components/CoffeeItem/CoffeeItem';
 import VantaClouds from './components/VantaClouds';
+import { assetUrl } from './utils/assetUrl';
 
 const App: Component = () => {
   const menu = menuJson as Menu;
@@ -66,7 +67,7 @@ const App: Component = () => {
             class="w-full max-w-md mx-auto mb-8 rounded-xl border-2 shadow-xl overflow-hidden bg-white/10 backdrop-blur-sm"
           >
             <img
-              src="/images/Logo.webp"
+              src={assetUrl('/images/Logo.webp')}
               alt="Logo"
               class="w-full h-auto"
             />

@@ -1,4 +1,5 @@
 import { Component, createSignal } from 'solid-js';
+import { assetUrl } from '../../utils/assetUrl';
 
 interface ImageProps {
   src: string;
@@ -24,7 +25,7 @@ const Image: Component<ImageProps> = (props) => {
         </div>
       ) : (
         <img
-          src={props.src}
+          src={assetUrl(props.src)}
           alt={props.alt}
           loading={props.loading || 'lazy'}
           onError={handleError}

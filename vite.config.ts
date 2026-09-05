@@ -1,8 +1,18 @@
+import { readFileSync } from 'node:fs';
 import { defineConfig } from 'vite';
 import solidPlugin from 'vite-plugin-solid';
 
+const pkg = JSON.parse(readFileSync(new URL('./package.json', import.meta.url), 'utf-8')) as {
+  version: string;
+};
+
 export default defineConfig({
   plugins: [solidPlugin()],
+  define: {
+    'import.meta.env.VITE_ASSET_VERSION': JSON.stringify(
+      process.env.VITE_ASSET_VERSION ?? pkg.version
+    ),
+  },
   server: {
     port: 5173,
     open: true
