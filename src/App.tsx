@@ -69,6 +69,11 @@ const App: Component = () => {
             <img
               src={assetUrl('/images/Logo.webp')}
               alt="Logo"
+              width={2659}
+              height={984}
+              loading="eager"
+              decoding="auto"
+              fetchpriority="high"
               class="w-full h-auto"
             />
           </Motion.div>
@@ -123,8 +128,8 @@ const App: Component = () => {
         <section aria-label="Coffee menu" class="w-full">
           <div class="flex flex-col gap-4 w-full max-w-md mx-auto">
             <For each={menu.items}>
-              {(item) => (
-                <CoffeeItem item={item} />
+              {(item, index) => (
+                <CoffeeItem item={item} priority={index() === 0} />
               )}
             </For>
           </div>
