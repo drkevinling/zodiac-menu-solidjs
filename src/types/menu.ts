@@ -12,6 +12,8 @@ export interface CoffeeMenuItem {
   price: number;
   category: string;
   image: string;
+  imageWidth: number;
+  imageHeight: number;
   alt: string;
   available?: boolean;
   order?: number;

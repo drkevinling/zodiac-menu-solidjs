@@ -5,7 +5,11 @@ interface ImageProps {
   src: string;
   alt: string;
   class?: string;
+  width?: number;
+  height?: number;
   loading?: 'lazy' | 'eager';
+  decoding?: 'async' | 'sync' | 'auto';
+  fetchpriority?: 'high' | 'low' | 'auto';
   placeholder?: string;
 }
 
@@ -27,7 +31,11 @@ const Image: Component<ImageProps> = (props) => {
         <img
           src={assetUrl(props.src)}
           alt={props.alt}
+          width={props.width}
+          height={props.height}
           loading={props.loading || 'lazy'}
+          decoding={props.decoding ?? ((props.loading || 'lazy') === 'eager' ? 'auto' : 'async')}
+          fetchpriority={props.fetchpriority}
           onError={handleError}
           class="w-full h-auto block"
         />
